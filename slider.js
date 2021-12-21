@@ -39,5 +39,35 @@ next.addEventListener('click' , function(){
     }
 });
 
+// add previous button
+previous.addEventListener('click',  function(){
+    if (!animating){
+        clearTimeout(nextTimeout);
+        previousSlide();
+    }
+});
+function previousSlide(){
+    slider.firstElementChild.style.left = '800px';
+    slider.appendChild(slider.firstElementChild);
+    allSlider = document.querySelectorAll('.slid');
+    lastSlider = allSlider[allSlider.length - 1];
+    requestAnimationFrame(moveleft);
+    animating = true;
+}
+function moveleft(){
+    let left = parseInt(lastSlider.style.left);
+    lastSlider.style.left = (left-speed) +'px';
+    if(left>speed){
+        requestAnimationFrame(moveleft);
+    }else{
+        nextTimeout = setTimeout(nextSlide , timeout);
+        animating = false;
+
+    }
+}
+
+
+
+
 
      
