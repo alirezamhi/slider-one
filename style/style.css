@@ -1,0 +1,35 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+#allslider{
+    margin: 20px;
+    width: 800px;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 20px;
+}
+.slid{
+    position: absolute;
+}
+button{
+    font-size: 60px;
+    color: white;
+    background: transparent;
+    border: none;    
+    outline: none;    
+    cursor: pointer;
+    position: absolute;
+    top:100px;
+    transition: 0.3s;
+}
+#previous{
+    left: 20px;
+}
+#next{
+    left: 750px;
+}
+button:hover{
+    color: turquoise;
+}
